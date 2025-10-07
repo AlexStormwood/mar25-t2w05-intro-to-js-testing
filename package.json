@@ -1,0 +1,28 @@
+{
+  "name": "mar25-t2w05-intro-to-js-testing",
+  "version": "1.0.0",
+  "description": "Jest, Supertest",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AlexStormwood/mar25-t2w05-intro-to-js-testing.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/AlexStormwood/mar25-t2w05-intro-to-js-testing/issues"
+  },
+  "homepage": "https://github.com/AlexStormwood/mar25-t2w05-intro-to-js-testing#readme",
+  "dependencies": {
+    "express": "^5.1.0"
+  },
+  "devDependencies": {
+    "jest": "^30.2.0",
+    "supertest": "^7.1.4"
+  }
+}
