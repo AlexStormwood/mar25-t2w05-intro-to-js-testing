@@ -20,4 +20,6 @@ Test goals
 - One unit test with Supertest of the string repeater Express endpoint
 
 
+
 <!--Pokemon Sprite-->
+![image](https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/151.png)
