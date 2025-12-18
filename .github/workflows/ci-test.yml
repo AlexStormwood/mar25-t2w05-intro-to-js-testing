@@ -77,6 +77,12 @@ jobs:
         run: echo "${{needs.second_job.result}} ${{needs.second_job.outputs.favouriteFruit}}"
   
   fourth_job:
-    needs: [third_job, test_runner]
+    needs: [second_job,third_job, test_runner]
     uses: ./.github/workflows/callable-workflow.yml
+    with:
+      favouriteFruit: ${{needs.second_job.outputs.favouriteFruit}}
+    # "secrets:inherit" shares ALL secrets from this workflow to the callable workflow
+    # secrets: inherit
+    secrets:
+      exampleSecretVariable: "example secret value is here, woooooooooooo"
 

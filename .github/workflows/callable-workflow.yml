@@ -2,6 +2,14 @@ name: Example Callable Workflow
 
 on:
   workflow_call:
+    inputs:
+      favouriteFruit:
+        required: true
+        type: string
+
+    secrets:
+      exampleSecretVariable:
+        required: true
 
 jobs:
   callable_workflow_job:
@@ -9,3 +17,7 @@ jobs:
     steps:
       - name: Confirm that the job runs
         run: echo "Hello, world!"
+      - name: Log the workflow inputs
+        run: echo "Input of favouriteFruit has value of ${{inputs.favouriteFruit}}"
+      - name: Log the workflow secrets
+        run: echo "Secret of exampleSecretVariable has value of ${{secrets.exampleSecretVariable}}"
