@@ -17,13 +17,14 @@ jobs:
   test_runner:
     strategy:
       matrix:
-        os: [ubuntu-latest, windows-latest, macos-latest]
-    # runs-on: ubuntu-latest
-    runs-on: ${{ matrix.os}}
-    
+        # os: [ubuntu-latest, windows-latest, macos-latest]
+        favouriteFruit: [banana, mango, blackcurrant]
+    runs-on: ubuntu-latest
+    # runs-on: ${{ matrix.os}}
+
     # Not using this but just to show env variables 
     env: 
-      EXAMPLE_ENV: "bananas"
+      EXAMPLE_ENV: ${{matrix.favouriteFruit}}
       
     services:
       mongo:
