@@ -1,0 +1,26 @@
+name: Artifact Maker
+
+on:
+  workflow_dispatch:
+    inputs:
+      message:
+        description: Message to store in the artifact
+        required: true
+        default: Hello from the artifact 
+
+jobs:
+  create-artifact:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Write artifact content to file 
+        run: | 
+          touch artifact.txt
+          cat artifact.txt
+          echo "${{inputs.message}}" >> artifact.txt
+          cat artifact.txt 
+
+      - name: Write to file (one-liner version)
+        run: echo "${{inputs.message}}" >> artifact-one-liner.txt
+
+      - name: Check what files are available in the terminal 
+        run: ls 
