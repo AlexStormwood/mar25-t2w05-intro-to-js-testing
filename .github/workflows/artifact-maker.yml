@@ -32,3 +32,12 @@ jobs:
           path: |
             artifact.txt
             artifact-one-liner.txt
+
+  download-artifact:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/download-artifact@v7
+        with:
+          name: example-artifact
+      - name: Display structure of downloaded files
+        run: ls -R
