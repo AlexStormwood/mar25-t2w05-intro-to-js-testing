@@ -1,0 +1,27 @@
+name: Artifact Downloader 
+
+on: 
+  workflow_run:
+    workflows: ["Artifact Maker"]
+    types: [completed]
+
+permissions:
+  actions: read
+  contents: read
+
+jobs:
+  download-artifact:
+    if: ${{ github.event.workflow_run.conclusion == 'success'}}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download artifact
+        uses: actions/download-artifact@v7
+        with:
+          name: example-artifact
+          path: downloads
+          run-id: ${{ github.event.workflow_run.id}}
+          repository: ${{github.repository}}
+          github-token: ${{secrets.GITHUB_TOKEN}}
+      
+      - name: Show the downloaded files
+        run: ls -la .
