@@ -34,6 +34,7 @@ jobs:
             artifact-one-liner.txt
 
   download-artifact:
+    needs: [create-artifact]
     runs-on: ubuntu-latest
     steps:
       - uses: actions/download-artifact@v7
