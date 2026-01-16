@@ -43,6 +43,9 @@ jobs:
       - name: Run the tests
         run: npm run test:junit
 
+      - name: Confirm that new test output file exists
+        run: ls
+
       - name: Publish Test Results
         uses: EnricoMi/publish-unit-test-result-action@v2
         if: (!cancelled())
