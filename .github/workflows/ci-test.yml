@@ -51,7 +51,7 @@ jobs:
         if: (!cancelled())
         with:
           files: |
-            jest-junit.xml
+            reports/jest-junit.xml
       
       - name: Log of the example env variable 
         run: echo "${{ env.EXAMPLE_ENV }}"
